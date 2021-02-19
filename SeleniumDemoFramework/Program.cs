@@ -25,7 +25,8 @@ namespace SeleniumDemoFramework
         public void Initialize()
         {
             //Navigate to Google page
-            driver.Navigate().GoToUrl("http://www.google.com");
+            //driver.Navigate().GoToUrl("http://www.google.com");
+            driver.Navigate().GoToUrl("https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
             Thread.Sleep(2000);
             Console.WriteLine("Open URL");
         }
@@ -33,12 +34,14 @@ namespace SeleniumDemoFramework
         [Test]
         public void ExecuteTest()
         {
-            //Find element
-            IWebElement element = driver.FindElement(By.Name("q"));
-
-            //Perform 
-            element.SendKeys("executeautomation");
-            Console.WriteLine("Execute test");
+            //Select title
+            SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Mr.", "Id");
+            Thread.Sleep(2000);
+            //Insert initial
+            SeleniumSetMethods.EnterText(driver, "Initial", "executeautomation", "Name");
+            Thread.Sleep(2000);
+            //click
+            SeleniumSetMethods.Click(driver, "Save", "name");
         }
 
         [TearDown]
