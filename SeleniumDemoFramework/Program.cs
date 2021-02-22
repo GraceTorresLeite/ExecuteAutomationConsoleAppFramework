@@ -40,6 +40,11 @@ namespace SeleniumDemoFramework
             //Insert initial
             SeleniumSetMethods.EnterText(driver, "Initial", "executeautomation", "Name");
             Thread.Sleep(2000);
+
+            Console.WriteLine("The value from my Title is : " + SeleniumGetMethods.GetText(driver, "TitleId","Id"));
+
+            Console.WriteLine("The value from my Title is : " + SeleniumGetMethods.GetText(driver, "Initial", "Name"));
+
             //click
             SeleniumSetMethods.Click(driver, "Save", "name");
         }
