@@ -39,18 +39,18 @@ namespace SeleniumDemoFramework
         public void ExecuteTest()
         {
             //Select title
-            SeleniumSetMethods.SelectDropDown("TitleId", "Mr.", "Id");
+            SeleniumSetMethods.SelectDropDown("TitleId", "Mr.", PropertyType.Id);
             Thread.Sleep(2000);
             //Insert initial
-            SeleniumSetMethods.EnterText("Initial", "executeautomation", "Name");
+            SeleniumSetMethods.EnterText("Initial", "executeautomation", PropertyType.Name);
             Thread.Sleep(2000);
 
-            Console.WriteLine("The value from my Title is : " + SeleniumGetMethods.GetText("TitleId","Id"));
+            Console.WriteLine("The value from my Title is : " + SeleniumGetMethods.GetText("TitleId", PropertyType.Id));
 
-            Console.WriteLine("The value from my Title is : " + SeleniumGetMethods.GetText("Initial", "Name"));
+            Console.WriteLine("The value from my Title is : " + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
 
             //click
-            SeleniumSetMethods.Click("Save", "Name");
+            SeleniumSetMethods.Click("Save", PropertyType.Name);
         }
 
         [TearDown]
